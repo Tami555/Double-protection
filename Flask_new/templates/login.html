@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+
+{% block head%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% macro block_errors(block_er) %}
+    {% for er in block_er%}
+        <div role="alert" class="error">
+            {{er}}
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+
+{% block content %}
+    <h1>Регистрация для получения каюты</h1>
+
+    <form method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.name.label}}<br>
+            {{form.name}}<br>
+            {{block_errors(form.name.errors)}}
+        </p>
+
+        <p>
+            {{form.age.label}}<br>
+            {{form.age}}<br>
+            {{block_errors(form.age.errors)}}
+        </p>
+
+        <p>
+            {{form.sex.label}}<br>
+            {{form.sex}}<br>
+            {{block_errors(form.sex.errors)}}
+        </p>
+
+        {{form.submit(class="button")}}
+    </form>
+
+
+{% endblock content%}

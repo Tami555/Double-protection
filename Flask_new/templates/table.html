@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
+{% endblock %}
+
+{% block content %}
+    {% set color = None %}
+    {% set imges = None %}
+    {% if sex == 'man' %}
+        {% if age > 21 %}
+            {% set color = 'man' %}
+            {% set imges = 'img/man.jpg' %}
+        {% else %}
+            {% set color = 'man_min' %}
+            {% set imges = 'img/boy.jpg' %}
+        {% endif %}
+    {% else %}
+        {% if age > 21 %}
+            {% set color = 'woman' %}
+            {% set imges = 'img/woman.jpg' %}
+        {% else %}
+            {% set color = 'girl' %}
+            {% set imges = 'img/girl.jpg' %}
+        {% endif %}
+    {% endif %}
+
+    <h1>Оформление каюты</h1>
+
+    <table>
+        <tr>
+            <th>Цвет стен</th>
+            <th>Инопланетянин</th>
+        </tr>
+        <tr>
+            <td>
+                <div style='width: 300px; height: 400px;' class="{{color}}"></div>
+            </td>
+            <td>
+                <img src="{{ url_for('static', filename=imges)}}" style="width: 300px; height: 400px;">
+            </td>
+        </tr>
+    </table>
+{% endblock content %}
