@@ -33,5 +33,10 @@ def index():
 def success():
     return "Регистрация прошла успешно !!!"
 
+@app.route('/distribution')
+def distribution():
+    workers = ['Ридли Скотт', 'Энди Уир', 'Марк Уонти', 'Венката Капур', 'Тедди Сандерс', 'Шон Бин']
+    return render_template('distribution.html', workers=workers)
+
 if __name__ == '__main__':
     app.run(debug=True)
