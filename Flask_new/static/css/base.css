@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-title{
+    width: 100%;
+    align-self: start;
+    display: flex;
+    justify-content: space-between;
+     padding: 15px;
+    background-color: rgba(174, 171, 171, 0.395);
+}
+.title_min{
+    align-self: start;
+    margin-top: 10px;
+    color: rgb(210, 198, 198);
+}

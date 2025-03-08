@@ -1,0 +1,26 @@
+.logo{
+    width: 100px;
+    height: 70px;
+}
+
+.title-block{
+    display: flex;
+    gap: 5px;
+    margin-top: 60px;
+}
+
+.error{
+    color: red;
+}
+
+input{
+    width: 300px;
+}
+
+.button{
+    margin-top: 30px;
+    width: 200px;
+    color: white;
+    background-color: rgb(0, 153, 255);
+    border-radius: 10px;
+}

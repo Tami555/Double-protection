@@ -1,0 +1,52 @@
+{% extends "base.html"%}
+
+{% block head%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% macro block_errors(block_er) %}
+    {% for er in block_er%}
+        <div role="alert" class="error">
+            {{er}}
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+
+{% block content %}
+    <div class="title-block">
+        <img src="{{url_for('static', filename='img/Mars.png')}}" class="logo">
+        <h1>Аварийный доступ</h1>
+    </div>
+
+    <form method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.astro_name.label}}<br>
+            {{form.astro_name}}<br>
+            {{block_errors(form.astro_name.errors)}}
+        </p>
+
+        <p>
+            {{form.astro_password.label}}<br>
+            {{form.astro_password}}<br>
+            {{block_errors(form.astro_password.errors)}}
+        </p>
+
+        <p>
+            {{form.cap_name.label}}<br>
+            {{form.cap_name}}<br>
+            {{block_errors(form.cap_name.errors)}}
+        </p>
+
+        <p>
+            {{form.cap_password.label}}<br>
+            {{form.cap_password}}<br>
+            {{block_errors(form.cap_password.errors)}}
+        </p>
+
+        {{form.submit(class="button")}}
+    </form>
+
+
+{% endblock content%}
