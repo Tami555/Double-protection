@@ -1,0 +1,35 @@
+{
+    "Persons": 
+    [
+        {
+          "firstName": "Елена",
+          "lastName": "Петрова",
+          "photo": "https://avatars.mds.yandex.net/i?id=aa13f11c4ddbb3bc31ac4718dd01b225_l-5175093-images-thumbs&n=13",
+          "specialties": ["Инженер-механик", "Пилот", "Эксперт по выживанию"]
+        },
+        {
+          "firstName": "Алексей",
+          "lastName": "Иванов",
+          "photo": "https://news.store.rambler.ru/img/89dbdccdd56489b31de0c1de314dc5cd",
+          "specialties": ["Врач", "Биолог", "Специалист по радиационной безопасности"]
+        },
+        {
+          "firstName": "Мария",
+          "lastName": "Сидорова",
+          "photo": "https://avatars.mds.yandex.net/i?id=ec1200f2b9140fe60f17f4d3751a4dc4_l-4560311-images-thumbs&n=13",
+          "specialties": ["Астроном", "Навигатор", "Оператор связи"]
+        },
+        {
+          "firstName": "Дмитрий",
+          "lastName": "Смирнов",
+          "photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/18f92337-ebf5-450d-aad9-1474134fa346/1920x",
+          "specialties": ["Инженер-электроник", "Робототехник", "Специалист по системам жизнеобеспечения"]
+        },
+        {
+          "firstName": "Ольга",
+          "lastName": "Бузова",
+          "photo": "https://www.eg.ru/wp-content/uploads/2023/04/1787010035-0-145-2049-1297-1920x0-80-0-0-0d2103429a11d2057aaf03844b24d0d1035116-780x585.jpg",
+          "specialties": ["Геолог", "Химик", "Специалист по анализу почвы"]
+        }
+      ]
+}

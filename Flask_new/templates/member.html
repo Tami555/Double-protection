@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+
+{% set person = persons | random %}
+
+{%block content%}
+    <h1>{{person.get("firstName")}}  {{person.get("lastName")}}</h1>
+    <img src={{person.photo}} width="300px" height="400px">
+    <h2>Специальности:</h2>
+    <ol>
+        {% for x in person.specialties%}
+            <li>{{x}}</li>
+        {% endfor %}
+    </ol>
+
+    
+{% endblock %}
