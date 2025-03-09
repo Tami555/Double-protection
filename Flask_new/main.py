@@ -3,6 +3,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField,  IntegerField, FileField
 from wtforms.validators import DataRequired
 import os
+import json
+
 
 app= Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -62,7 +64,6 @@ def table(sex, age):
     return render_template('table.html', sex=sex, age=int(age))
 
 
-@app.route('/', methods=['GET', 'POST'])
 @app.route('/galery', methods=['GET', 'POST'])
 def carousel():
     load = Load_Images()
@@ -77,6 +78,14 @@ def carousel():
     lst_img = os.listdir(app.config['UPLOAD_FOLDER'])
     lst_img = [f'img/img_carousel/{x}' for x in lst_img]
     return render_template('carousel.html', lst_image=lst_img, form=load)
+
+@app.route('/')
+@app.route('/member')
+def member():
+     with open(os.path.join('templates', 'member.json'), encoding='utf-8') as file:
+        data = json.load(file)  # Загружаем JSO
+        persons = data["Persons"]
+        return render_template('member.html', persons=persons)
 
 if __name__ == '__main__':
     app.run(debug=True)
